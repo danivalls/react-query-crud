@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Providers } from "providers";
+import PostsManagement from "features/PostsManagement";
+import CreatePost from "features/CreatePost";
+import { Container } from "App.styled";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Providers>
+      <Container>
+        <CreatePost />
+        <PostsManagement />
+      </Container>
+    </Providers>
   );
-}
+};
 
 export default App;
