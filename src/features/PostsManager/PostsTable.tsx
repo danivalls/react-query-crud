@@ -9,7 +9,7 @@ import {
   TablePagination,
 } from "@mui/material";
 import { TableCellHeader } from "./PostsTable.styled";
-import Row from './Row'
+import Row from "./Row";
 
 import { Post } from "repositories/posts.types";
 
@@ -21,7 +21,7 @@ interface PostsTableProps {
 
 const PostsTable: React.FC<PostsTableProps> = ({ posts }) => {
   const [page, setPage] = useState(0);
-  const [paginatedPosts, setPaginatedPosts] = useState<Post[]>([]);
+  const [postsInCurrentPage, setPostsInCurrentPage] = useState<Post[]>([]);
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -29,9 +29,15 @@ const PostsTable: React.FC<PostsTableProps> = ({ posts }) => {
 
   useEffect(() => {
     const startAt = page * PAGE_SIZE;
-    const endAt = (page + 1) * PAGE_SIZE
+    const endAt = (page + 1) * PAGE_SIZE;
 
-    setPaginatedPosts(posts.slice(startAt, endAt));
+    const postsInNewPage = posts.slice(startAt, endAt);
+
+    if (postsInNewPage.length > 0) {
+      setPostsInCurrentPage(postsInNewPage);
+    } else {
+      setPage(page ? page - 1 : 0);
+    }
   }, [posts, page]);
 
   return (
@@ -46,7 +52,7 @@ const PostsTable: React.FC<PostsTableProps> = ({ posts }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {paginatedPosts.map((post) => (
+          {postsInCurrentPage.map((post) => (
             <Row key={post.id} post={post} />
           ))}
         </TableBody>

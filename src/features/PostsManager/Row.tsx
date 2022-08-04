@@ -11,7 +11,7 @@ const Row: React.FC<RowProps> = ({ post }) => {
   const { removePost, isDeleting } = useDeletePost();
 
   return (
-    <TableRow key={post.id}>
+    <TableRow>
       <TableCell>{post.title}</TableCell>
       <TableCell>{post.body}</TableCell>
       <TableCell>{post.userId}</TableCell>

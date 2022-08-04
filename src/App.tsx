@@ -1,6 +1,6 @@
 import React from "react";
 import { Providers } from "providers";
-import PostsManagement from "features/PostsManagement";
+import PostsManager from "features/PostsManager";
 import CreatePost from "features/CreatePost";
 import { Container } from "App.styled";
 
@@ -9,7 +9,7 @@ const App = () => {
     <Providers>
       <Container>
         <CreatePost />
-        <PostsManagement />
+        <PostsManager />
       </Container>
     </Providers>
   );
