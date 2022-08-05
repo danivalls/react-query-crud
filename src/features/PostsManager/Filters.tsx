@@ -25,11 +25,13 @@ const Filters: React.FC<FiltersProps> = ({ onSearch }) => {
     <FiltersContainer>
       <TextField
         label="Title"
+        size="small"
         value={titleQuery}
         onChange={({ target }) => setTitleQuery(target.value)}
       />
       <TextField
-        label="User"
+        label="User Id"
+        size="small"
         value={userQuery}
         onChange={({ target }) => setUserQuery(target.value)}
         type="number"

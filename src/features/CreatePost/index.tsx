@@ -6,7 +6,7 @@ import NewPostForm from "./NewPostForm";
 import useCreatePost from "./useCreatePost";
 import { PostFormData } from "types/posts.types";
 
-const CreatePost = () => {
+const CreatePost: React.FC = () => {
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const { addPost, isLoading } = useCreatePost();
 
@@ -18,6 +18,7 @@ const CreatePost = () => {
     <>
       <Button
         variant="contained"
+        color="secondary"
         onClick={() => setModalIsVisible(true)}
         startIcon={<AddIcon />}
       >

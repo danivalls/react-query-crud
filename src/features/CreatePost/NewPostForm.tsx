@@ -3,13 +3,17 @@ import { TextField, Button } from "@mui/material";
 import { ActionsContainer, Form } from "./NewPostForm.styled";
 import { PostFormData } from "types/posts.types";
 
-interface FormProps {
+interface NewFormProps {
   onSubmit: (postData: PostFormData) => void;
   onCancel: () => void;
   isLoading?: boolean;
 }
 
-const NewPostForm: React.FC<FormProps> = ({ onSubmit, onCancel, isLoading }) => {
+const NewPostForm: React.FC<NewFormProps> = ({
+  onSubmit,
+  onCancel,
+  isLoading,
+}) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [isValidating, setIsValidating] = useState(false);
@@ -26,6 +30,7 @@ const NewPostForm: React.FC<FormProps> = ({ onSubmit, onCancel, isLoading }) => 
     <Form onSubmit={handleFormSubmit}>
       <TextField
         label="Title"
+        size="small"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         helperText={!title.length && isValidating ? "Title is required" : ""}
@@ -43,7 +48,12 @@ const NewPostForm: React.FC<FormProps> = ({ onSubmit, onCancel, isLoading }) => 
         rows={4}
       />
       <ActionsContainer>
-        <Button variant="text" color="error" onClick={onCancel} disabled={isLoading}>
+        <Button
+          variant="text"
+          color="secondary"
+          onClick={onCancel}
+          disabled={isLoading}
+        >
           Cancel
         </Button>
         <Button
@@ -52,7 +62,7 @@ const NewPostForm: React.FC<FormProps> = ({ onSubmit, onCancel, isLoading }) => 
           onClick={() => setIsValidating(true)}
           disabled={isLoading}
         >
-          {isLoading ? 'Creating...' : 'Create'}
+          {isLoading ? "Creating..." : "Create"}
         </Button>
       </ActionsContainer>
     </Form>
