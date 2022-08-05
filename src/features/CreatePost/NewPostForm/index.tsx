@@ -1,8 +1,9 @@
-import React, { FormEvent, useState } from "react";
-import { TextField, Button } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
-import { ActionsContainer, Form } from "./NewPostForm.styled";
+import { Button, TextField } from "@mui/material";
+import React, { FormEvent, useState } from "react";
 import { PostFormData } from "types/posts.types";
+
+import { ActionsContainer, Form } from "./NewPostForm.styled";
 
 interface NewFormProps {
   onSubmit: (postData: PostFormData) => void;

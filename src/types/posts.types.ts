@@ -8,4 +8,4 @@ export type Post = {
 export type PostFormData = {
   title: string;
   body: string;
-}
+};

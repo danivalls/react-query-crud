@@ -1,7 +1,8 @@
+import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
-import { TextField, Button } from "@mui/material";
-import { FiltersContainer } from "./Filters.styled";
 import { FiltersQuery } from "types/filters.types";
+
+import { FiltersContainer } from "./Filters.styled";
 
 interface FiltersProps {
   onSearch: (query: FiltersQuery) => void;

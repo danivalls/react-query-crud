@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FormContainer = styled.section`
   position: absolute;
@@ -15,5 +15,4 @@ export const FormContainer = styled.section`
 
   background-color: #fff;
   border-radius: 0.25rem;
-
-`
+`;

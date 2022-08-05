@@ -1,5 +1,6 @@
 import React from "react";
-import { SpinnerContainer, Circle } from "./Spinner.styled";
+
+import { Circle, SpinnerContainer } from "./Spinner.styled";
 
 const getStartPoint = (index: number, circlesAmount: number) =>
   (index * 100) / circlesAmount;
@@ -12,7 +13,11 @@ interface SpinnerProps {
   speed?: number;
 }
 
-const Spinner: React.FC<SpinnerProps> = ({ circlesAmount = 3, size = 50, speed = 1 }) => {
+const Spinner: React.FC<SpinnerProps> = ({
+  circlesAmount = 3,
+  size = 50,
+  speed = 1,
+}) => {
   return (
     <SpinnerContainer size={size}>
       {new Array(circlesAmount).fill(0).map((_, index) => (

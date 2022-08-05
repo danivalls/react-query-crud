@@ -1,6 +1,7 @@
-import { render, screen, within } from "test/testUtils";
 import userEvent from "@testing-library/user-event";
 import React from "react";
+import { render, screen, within } from "test/testUtils";
+
 import NewPostForm from ".";
 
 describe("NewPostForm", () => {
@@ -45,7 +46,7 @@ describe("NewPostForm", () => {
     const hint = screen.getByText("Title is required");
 
     expect(hint).toBeInTheDocument();
-  })
+  });
 
   it('calls onCancel when "Cancel" button is clicked', () => {
     const onCancel = jest.fn();

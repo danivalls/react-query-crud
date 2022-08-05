@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { TableCellHeader, NoDataContainer } from "./PostsTable.styled";
-import Row from "./Row";
-import Spinner from "components/Spinner";
 import {
+  Paper,
   Table,
   TableBody,
-  TableRow,
   TableCell,
   TableContainer,
   TableHead,
-  Paper,
   TablePagination,
+  TableRow,
 } from "@mui/material";
-
+import React, { useEffect, useState } from "react";
 import { Post } from "types/posts.types";
+
+import Spinner from "components/Spinner";
+
+import { NoDataContainer, TableCellHeader } from "./PostsTable.styled";
+import Row from "./Row";
 
 const PAGE_SIZE = 5;
 
@@ -50,8 +51,8 @@ const PostsTable: React.FC<PostsTableProps> = ({ posts, isLoading }) => {
           <TableRow>
             <TableCellHeader>Title</TableCellHeader>
             <TableCellHeader>Body</TableCellHeader>
-            <TableCellHeader align='center'>User Id</TableCellHeader>
-            <TableCellHeader align='center'>Actions</TableCellHeader>
+            <TableCellHeader align="center">User Id</TableCellHeader>
+            <TableCellHeader align="center">Actions</TableCellHeader>
           </TableRow>
         </TableHead>
         <TableBody>

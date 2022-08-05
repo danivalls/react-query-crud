@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { FiltersQuery } from "types/filters.types";
+
+import Filters from "./Filters";
 import PostsTable from "./PostsTable";
 import useFetchPosts from "./useFetchPosts";
-import Filters from "./Filters";
-import { FiltersQuery } from "types/filters.types";
 
 const PostsManager: React.FC = () => {
   const [filters, setFilters] = useState<FiltersQuery>({

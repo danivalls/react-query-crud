@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { TableCell } from "@mui/material";
+import styled from "styled-components";
 
 export const TableCellHeader = styled(TableCell)`
   background-color: ${({ theme }) => theme.colors.contentBackground};
@@ -12,5 +12,4 @@ export const NoDataContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-
+`;

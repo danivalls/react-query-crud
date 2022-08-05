@@ -1,6 +1,6 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createPost } from "repositories/posts";
 import { Post, PostFormData } from "types/posts.types";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const USER_ID = 1; // Fake current user id
 

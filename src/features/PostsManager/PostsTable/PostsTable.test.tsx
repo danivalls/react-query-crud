@@ -1,5 +1,6 @@
 import React from "react";
 import { render, screen } from "test/testUtils";
+
 import PostsTable from ".";
 
 describe("PostsTable", () => {
@@ -10,7 +11,7 @@ describe("PostsTable", () => {
     ];
 
     render(<PostsTable posts={posts} />);
-    
+
     posts.forEach((post) => {
       const postTitle = screen.getByText(post.title);
       const postBody = screen.getByText(post.body);
@@ -34,5 +35,5 @@ describe("PostsTable", () => {
     const text = screen.getByText("No posts found");
 
     expect(text).toBeInTheDocument();
-  })
+  });
 });

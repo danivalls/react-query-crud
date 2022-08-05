@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Button, Modal, Fade } from "@mui/material";
 import { Add as AddIcon } from "@mui/icons-material";
+import { Button, Fade, Modal } from "@mui/material";
+import React, { useState } from "react";
+import { PostFormData } from "types/posts.types";
+
 import { FormContainer } from "./CreatePost.styled";
 import NewPostForm from "./NewPostForm";
 import useCreatePost from "./useCreatePost";
-import { PostFormData } from "types/posts.types";
 
 const CreatePost: React.FC = () => {
   const [modalIsVisible, setModalIsVisible] = useState(false);

@@ -1,5 +1,6 @@
-import useFetchPosts from "./useFetchPosts";
 import { renderHook, waitFor } from "test/testUtils";
+
+import useFetchPosts from "./useFetchPosts";
 
 jest.mock("repositories/posts", () => ({
   getAllPosts: () => MOCKED_POSTS,

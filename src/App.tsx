@@ -1,8 +1,8 @@
-import React from "react";
-import { Providers } from "providers";
-import PostsManager from "features/PostsManager";
-import CreatePost from "features/CreatePost";
 import { Container, Header } from "App.styled";
+import CreatePost from "features/CreatePost";
+import PostsManager from "features/PostsManager";
+import { Providers } from "providers";
+import React from "react";
 
 const App = () => {
   return (

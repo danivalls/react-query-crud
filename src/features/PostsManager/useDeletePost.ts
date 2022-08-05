@@ -1,6 +1,6 @@
-import { useQueryClient, useMutation } from "@tanstack/react-query";
-import { Post } from "types/posts.types";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deletePost } from "repositories/posts";
+import { Post } from "types/posts.types";
 
 const useDeletePost = () => {
   const queryClient = useQueryClient();
