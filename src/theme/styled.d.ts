@@ -1,17 +1,16 @@
-import 'styled-components';
+import "styled-components";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       primary: string;
       secondary: string;
-      primaryText: string;
-      secondaryText: string;
+      text: string;
       background: string;
       contentBackground: string;
     };
 
-    fontFamily: string,
+    fontFamily: string;
 
     fontSize: {
       small: string;
@@ -28,13 +27,5 @@ declare module 'styled-components' {
       regular: number;
       bold: number;
     };
-
-    borderRadius: {
-      small: string;
-      regular: string;
-      large: string;
-      round: string;
-    };
-
   }
 }

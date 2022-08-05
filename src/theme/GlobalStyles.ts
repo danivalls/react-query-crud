@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     font-size: 16px;
     overflow-x: hidden;
+    color: ${({ theme }) => theme.colors.text};
 
     h1, h2, h3, h4, h5, h6 {
       font-weight: ${({ theme }) => theme.fontWeight.bold};
