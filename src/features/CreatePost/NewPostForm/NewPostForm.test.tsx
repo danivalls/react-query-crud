@@ -1,4 +1,4 @@
-import { render, screen, within } from "setupTests";
+import { render, screen, within } from "test/testUtils";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 import NewPostForm from ".";

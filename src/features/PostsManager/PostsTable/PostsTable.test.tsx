@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "setupTests";
+import { render, screen } from "test/testUtils";
 import PostsTable from ".";
 
 describe("PostsTable", () => {

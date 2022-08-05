@@ -4,7 +4,7 @@ import useFetchPosts from "./useFetchPosts";
 import Filters from "./Filters";
 import { FiltersQuery } from "types/filters.types";
 
-const PostsManagement: React.FC = () => {
+const PostsManager: React.FC = () => {
   const [filters, setFilters] = useState<FiltersQuery>({
     title: "",
     userId: "",
@@ -19,4 +19,4 @@ const PostsManagement: React.FC = () => {
   );
 };
 
-export default PostsManagement;
+export default PostsManager;
