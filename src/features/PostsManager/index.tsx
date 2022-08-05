@@ -14,7 +14,7 @@ const PostsManagement: React.FC = () => {
   return (
     <>
       <Filters onSearch={setFilters} />
-      <PostsTable posts={posts} isLoading={isLoading}/>
+      <PostsTable posts={posts} isLoading={isLoading} />
     </>
   );
 };

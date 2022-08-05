@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { TextField, Button } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 import { ActionsContainer, Form } from "./NewPostForm.styled";
 import { PostFormData } from "types/posts.types";
 
@@ -58,14 +59,15 @@ const NewPostForm: React.FC<NewFormProps> = ({
         >
           Cancel
         </Button>
-        <Button
+        <LoadingButton
+          loading={isLoading}
           variant="contained"
           type="submit"
           onClick={() => setIsValidating(true)}
           disabled={isLoading}
         >
-          {isLoading ? "Creating..." : "Create"}
-        </Button>
+          Create
+        </LoadingButton>
       </ActionsContainer>
     </Form>
   );

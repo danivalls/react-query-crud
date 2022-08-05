@@ -3,7 +3,7 @@ import { TableRow, TableCell } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { Post } from "types/posts.types";
 import { Delete as DeleteIcon } from "@mui/icons-material";
-import useDeletePost from "./useDeletePost";
+import useDeletePost from "../useDeletePost";
 
 interface RowProps {
   post: Post;

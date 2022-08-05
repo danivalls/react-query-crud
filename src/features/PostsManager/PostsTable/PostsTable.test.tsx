@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "setupTests";
-import PostsTable from "./PostsTable";
+import PostsTable from ".";
 
 describe("PostsTable", () => {
   it("should render given posts", () => {

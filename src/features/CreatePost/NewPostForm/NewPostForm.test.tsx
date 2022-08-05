@@ -1,7 +1,7 @@
 import { render, screen, within } from "setupTests";
 import userEvent from "@testing-library/user-event";
 import React from "react";
-import NewPostForm from "./NewPostForm";
+import NewPostForm from ".";
 
 describe("NewPostForm", () => {
   it("calls onSubmit with valid data when form is submitted", () => {
