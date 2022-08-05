@@ -14,13 +14,17 @@ const useCreatePost = () => {
 
     const post: Post = { id, userId, ...postData };
 
-    return mutate(post, {
+    mutate(post, {
       onSuccess: () => {
         queryClient.setQueryData(["posts"], (prevPosts?: Post[]) => [
           ...(prevPosts || []),
           post,
         ]);
         onSuccess();
+        /*
+          In a real environment we would refetch the posts by invalidating the cache with:
+          queryClient.invalidateQueryData(["posts"]);
+        */
       },
     });
   };

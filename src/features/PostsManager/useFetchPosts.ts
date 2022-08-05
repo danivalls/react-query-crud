@@ -4,8 +4,8 @@ import { FiltersQuery } from "types/filters.types";
 
 const useFetchPosts = (filters: FiltersQuery) => {
   const { data, isLoading } = useQuery(["posts"], getAllPosts, {
-    cacheTime: Infinity,
-    refetchOnWindowFocus: false,
+    cacheTime: Infinity, // Cache forever. We wouldn't use this in a real app.
+    refetchOnWindowFocus: false, // Don't refetch on window focus. We wouldn't use this in a real app.
   });
 
   const filteredPosts = data?.filter((post) => {
