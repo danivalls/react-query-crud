@@ -11,6 +11,7 @@ const queryClient = new QueryClient();
 const muiTheme = createTheme({
   palette: {
     primary: { main: theme.colors.primary },
+    secondary: { main: theme.colors.secondary },
   },
 });
 
