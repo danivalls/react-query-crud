@@ -1,9 +1,10 @@
 import React, { FormEvent, useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { ActionsContainer, Form } from "./NewPostForm.styled";
+import { PostFormData } from "types/posts.types";
 
 interface FormProps {
-  onSubmit: (values: { title: string; body: string }) => void;
+  onSubmit: (postData: PostFormData) => void;
   onCancel: () => void;
   isLoading?: boolean;
 }

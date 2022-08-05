@@ -12,7 +12,10 @@ const useDeletePost = () => {
         queryClient.setQueryData(["posts"], (prevPosts?: Post[]) =>
           prevPosts?.filter((post) => post.id !== postId)
         );
-        // in a real environment we would invalidate the cache here
+        /*
+          In a real environment we would refetch the posts by invalidating the cache with:
+          queryClient.invalidateQueryData(["posts"]);
+        */
       },
     });
   };
