@@ -30,6 +30,7 @@ const NewPostForm: React.FC<NewFormProps> = ({
     <Form onSubmit={handleFormSubmit}>
       <TextField
         label="Title"
+        aria-label="post-title"
         size="small"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -39,6 +40,7 @@ const NewPostForm: React.FC<NewFormProps> = ({
       />
       <TextField
         label="Body"
+        aria-label="post-body"
         value={body}
         onChange={(e) => setBody(e.target.value)}
         helperText={!body.length && isValidating ? "Body is required" : ""}
