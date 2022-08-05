@@ -1,22 +1,9 @@
-import { Post } from "./posts.types";
+import { Post } from "types/posts.types";
 
 const API_URL = "https://jsonplaceholder.typicode.com";
 
 export const getAllPosts = async (): Promise<Post[]> => {
-  return fetch(`${API_URL}/posts`)
-    .then((response) => response.json())
-    .then((posts) => posts as Post[]);
-};
-
-export const getPaginatedPosts = async (
-  page: number,
-  pageSize: number
-): Promise<Post[]> => {
-  const params = new URLSearchParams({
-    _page: String(page),
-    _limit: String(pageSize),
-  });
-
+  const params = new URLSearchParams({_delay: "5000"})
   return fetch(`${API_URL}/posts?${params}`)
     .then((response) => response.json())
     .then((posts) => posts as Post[]);

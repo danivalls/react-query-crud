@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal, Fade } from "@mui/material";
 import { FormContainer } from "./CreatePost.styled";
 import NewPostForm from "./NewPostForm";
-import { Post } from "repositories/posts.types";
+import { Post } from "types/posts.types";
 import useCreatePost from "./useCreatePost";
 
 const USER_ID = 1; // Fake current user id

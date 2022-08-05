@@ -1,6 +1,6 @@
 import React from "react";
 import { TableRow, TableCell, Button } from "@mui/material";
-import { Post } from "repositories/posts.types";
+import { Post } from "types/posts.types";
 import useDeletePost from "./useDeletePost";
 
 interface RowProps {

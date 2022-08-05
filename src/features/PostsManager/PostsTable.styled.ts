@@ -8,3 +8,9 @@ export const TableCellHeader = styled(TableCell)`
   white-space: nowrap;
 `;
 
+export const NoDataContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+

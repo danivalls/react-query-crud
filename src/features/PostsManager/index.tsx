@@ -1,14 +1,22 @@
-import React from "react";
-import Spinner from "components/Spinner";
+import React, { useState } from "react";
 import PostsTable from "./PostsTable";
 import useFetchPosts from "./useFetchPosts";
+import Filters from "./Filters";
+import { FiltersQuery } from "types/filters.types";
 
 const PostsManagement: React.FC = () => {
-  const { posts, isLoading } = useFetchPosts();
+  const [filters, setFilters] = useState<FiltersQuery>({
+    title: "",
+    userId: "",
+  });
+  const { posts, isLoading } = useFetchPosts(filters);
 
-  if (isLoading) return <Spinner />;
-
-  return <PostsTable posts={posts!} />;
+  return (
+    <>
+      <Filters onSearch={setFilters} />
+      <PostsTable posts={posts} isLoading={isLoading}/>
+    </>
+  );
 };
 
 export default PostsManagement;
