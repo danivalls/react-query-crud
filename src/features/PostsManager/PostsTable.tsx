@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { TableCellHeader, NoDataContainer } from "./PostsTable.styled";
+import Row from "./Row";
+import Spinner from "components/Spinner";
 import {
   Table,
   TableBody,
@@ -9,17 +12,14 @@ import {
   Paper,
   TablePagination,
 } from "@mui/material";
-import { TableCellHeader, NoDataContainer } from "./PostsTable.styled";
-import Row from "./Row";
 
 import { Post } from "types/posts.types";
-import Spinner from "components/Spinner";
 
 const PAGE_SIZE = 5;
 
 interface PostsTableProps {
   posts: Post[];
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 const PostsTable: React.FC<PostsTableProps> = ({ posts, isLoading }) => {
@@ -38,7 +38,7 @@ const PostsTable: React.FC<PostsTableProps> = ({ posts, isLoading }) => {
 
     setPostsInCurrentPage(postsInNewPage);
 
-    if (postsInNewPage.length === 0) {
+    if (!postsInNewPage.length) {
       setPage(page ? page - 1 : 0);
     }
   }, [posts, page]);

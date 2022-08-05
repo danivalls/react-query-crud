@@ -18,7 +18,9 @@ interface SpinnerContainerProps {
   size: number;
 }
 
-export const SpinnerContainer = styled.div<SpinnerContainerProps>`
+export const SpinnerContainer = styled.div.attrs(() => ({
+  role: "progressbar",
+}))<SpinnerContainerProps>`
   position: relative;
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
@@ -36,7 +38,7 @@ export const Circle = styled.div<CircleProps>`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderRadius.round};
-  animation: ${({ startAt, endAt }) => getAnimationKeyframes(startAt, endAt)} ${({ speed }) => speed}s
-    linear infinite;
+  border-radius: 50%;
+  animation: ${({ startAt, endAt }) => getAnimationKeyframes(startAt, endAt)}
+    ${({ speed }) => speed}s linear infinite;
 `;

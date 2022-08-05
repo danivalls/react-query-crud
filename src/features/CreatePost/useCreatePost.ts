@@ -15,10 +15,10 @@ const useCreatePost = () => {
     const post: Post = { id, userId, ...postData };
 
     mutate(post, {
-      onSuccess: () => {
+      onSuccess: (createdPost) => {
         queryClient.setQueryData(["posts"], (prevPosts?: Post[]) => [
           ...(prevPosts || []),
-          post,
+          createdPost,
         ]);
         onSuccess();
         /*

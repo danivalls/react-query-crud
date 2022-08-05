@@ -3,7 +3,8 @@ import { Post } from "types/posts.types";
 const API_URL = "https://jsonplaceholder.typicode.com";
 
 export const getAllPosts = async (): Promise<Post[]> => {
-  const params = new URLSearchParams({_delay: "5000"})
+  const params = new URLSearchParams({_delay: "1500"}) // delay for demo purposes
+
   return fetch(`${API_URL}/posts?${params}`)
     .then((response) => response.json())
     .then((posts) => posts as Post[]);
@@ -16,7 +17,7 @@ export const deletePost = (postId: number) => {
 };
 
 export const createPost = async (post: Post) => {
-  fetch(`${API_URL}/posts`, {
+  return fetch(`${API_URL}/posts`, {
     method: "POST",
     body: JSON.stringify(post),
     headers: {
