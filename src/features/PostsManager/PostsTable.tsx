@@ -50,8 +50,8 @@ const PostsTable: React.FC<PostsTableProps> = ({ posts, isLoading }) => {
           <TableRow>
             <TableCellHeader>Title</TableCellHeader>
             <TableCellHeader>Body</TableCellHeader>
-            <TableCellHeader>User Id</TableCellHeader>
-            <TableCellHeader>Delete</TableCellHeader>
+            <TableCellHeader align='center'>User Id</TableCellHeader>
+            <TableCellHeader align='center'>Actions</TableCellHeader>
           </TableRow>
         </TableHead>
         <TableBody>

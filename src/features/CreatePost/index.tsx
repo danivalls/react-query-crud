@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 import { Button, Modal, Fade } from "@mui/material";
+import { Add as AddIcon } from "@mui/icons-material";
 import { FormContainer } from "./CreatePost.styled";
 import NewPostForm from "./NewPostForm";
-import { Post } from "types/posts.types";
 import useCreatePost from "./useCreatePost";
-
-const USER_ID = 1; // Fake current user id
+import { PostFormData } from "types/posts.types";
 
 const CreatePost = () => {
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const { addPost, isLoading } = useCreatePost();
 
-  const handleFormSubmit = (postData: { title: string; body: string }) => {
-    const id = Math.floor(Math.random() * 1000000); // In a real environment, this would be a database id
-    const userId = USER_ID;
-
-    const post: Post = { id, userId, ...postData };
-
-    addPost(post, () => setModalIsVisible(false));
+  const handleFormSubmit = (postData: PostFormData) => {
+    addPost(postData, () => setModalIsVisible(false));
   };
 
   return (
     <>
-      <Button variant="contained" onClick={() => setModalIsVisible(true)}>
+      <Button
+        variant="contained"
+        onClick={() => setModalIsVisible(true)}
+        startIcon={<AddIcon />}
+      >
         Create new post
       </Button>
       <Modal open={modalIsVisible} onClose={() => setModalIsVisible(false)}>

@@ -2,13 +2,16 @@ import React from "react";
 import { Providers } from "providers";
 import PostsManager from "features/PostsManager";
 import CreatePost from "features/CreatePost";
-import { Container } from "App.styled";
+import { Container, Header } from "App.styled";
 
 const App = () => {
   return (
     <Providers>
       <Container>
-        <CreatePost />
+        <Header>
+          <h1>Post Manager</h1>
+          <CreatePost />
+        </Header>
         <PostsManager />
       </Container>
     </Providers>

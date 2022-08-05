@@ -35,12 +35,12 @@ const Filters: React.FC<FiltersProps> = ({ onSearch }) => {
         type="number"
       />
 
-      <Button variant="text" color="primary" onClick={resetFields}>
-        Reset
-      </Button>
-
       <Button variant="contained" color="primary" onClick={handleSearch}>
         Search
+      </Button>
+
+      <Button variant="text" color="primary" onClick={resetFields}>
+        Reset All
       </Button>
     </FiltersContainer>
   );

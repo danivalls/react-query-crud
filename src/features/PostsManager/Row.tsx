@@ -1,6 +1,8 @@
 import React from "react";
-import { TableRow, TableCell, Button } from "@mui/material";
+import { TableRow, TableCell } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 import { Post } from "types/posts.types";
+import { Delete as DeleteIcon } from "@mui/icons-material";
 import useDeletePost from "./useDeletePost";
 
 interface RowProps {
@@ -14,16 +16,16 @@ const Row: React.FC<RowProps> = ({ post }) => {
     <TableRow>
       <TableCell>{post.title}</TableCell>
       <TableCell>{post.body}</TableCell>
-      <TableCell>{post.userId}</TableCell>
-      <TableCell>
-        <Button
-          variant="outlined"
+      <TableCell align='center'>{post.userId}</TableCell>
+      <TableCell align='center'>
+        <LoadingButton
+          loading={isDeleting}
+          variant="text"
           color="error"
-          sx={{ width: "8rem" }}
           onClick={() => removePost(post.id)}
         >
-          {isDeleting ? "Deleting..." : "Delete"}
-        </Button>
+          <DeleteIcon />
+        </LoadingButton>
       </TableCell>
     </TableRow>
   );
