@@ -1,5 +1,6 @@
 {
   "name": "exoticca",
+  "homepage": "https://danivalls.github.io/react-query-crud",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +9,7 @@
     "@mui/material": "^5.9.3",
     "@mui/styled-engine-sc": "npm:@mui/styled-engine-sc@latest",
     "@tanstack/react-query": "^4.0.10",
+    "@tanstack/react-query-devtools": "^5.24.8",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -31,7 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +57,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "gh-pages": "^6.1.1",
     "prettier": "^2.7.1"
   }
 }
